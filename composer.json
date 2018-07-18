@@ -18,8 +18,12 @@
         }
     },
     "scripts" : {
-        "post-install-cmd" : "FTC\\Notifier\\Pushover\\ComposerScripts::installConfigFiles",
-        "post-update-cmd" : "FTC\\Notifier\\Pushover\\ComposerScripts::installConfigFiles"
+        "post-install-cmd" : [
+		"FTC\\Notifier\\Pushover\\ComposerScripts::installConfigFiles"
+	],
+        "post-update-cmd" : [
+		"FTC\\Notifier\\Pushover\\ComposerScripts::installConfigFiles"
+	]
     },
     "require" : {
         "leonardoteixeira/pushover" : "^1.2",

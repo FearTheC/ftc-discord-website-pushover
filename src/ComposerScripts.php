@@ -12,6 +12,7 @@ class ComposerScripts
     
     public static function installConfigFiles(Event $event)
     {
+        echo 'kllll';
         var_dump(realpath('.'));
     }
     
