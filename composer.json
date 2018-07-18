@@ -21,6 +21,7 @@
 		"post-install-cmd" : "php -r \"copy('config/pushover.local.php.dist', '/../../pushover.local.php');\""
 	},
 	"require" : {
-		"leonardoteixeira/pushover" : "^1.2"
+		"leonardoteixeira/pushover" : "^1.2",
+		"psr/container": "^1.0"
 	}
 }
