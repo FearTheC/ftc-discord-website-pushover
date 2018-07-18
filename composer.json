@@ -12,10 +12,15 @@
 			"FTC\\Notifier\\Pushover\\" : "src/"
 		}
 	},
-	"scripts" : {
-		"post-install-cmd" : "php -r \"copy('config/pushover.local.php.dist', '/app/config/autoload/pushover.local.php');\""
+	"extra" : {
+		"zf" : {
+			"config-provider" : "FTC\\Notifier\\Pushover\\ConfigProvider"
+		}
 	},
-	"require": {
-		"leonardoteixeira/pushover": "^1.2"
+	"scripts" : {
+		"post-install-cmd" : "php -r \"copy('config/pushover.local.php.dist', '/../../pushover.local.php');\""
+	},
+	"require" : {
+		"leonardoteixeira/pushover" : "^1.2"
 	}
 }
