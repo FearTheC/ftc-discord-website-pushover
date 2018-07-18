@@ -14,5 +14,8 @@
 	},
 	"scripts" : {
 		"post-install-cmd" : "php -r \"copy('config/pushover.local.php.dist', '/app/config/autoload/pushover.local.php');\""
+	},
+	"require": {
+		"leonardoteixeira/pushover": "^1.2"
 	}
 }
