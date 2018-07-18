@@ -1,27 +1,29 @@
 {
-	"name" : "qbonaventure/discord-website-pushover",
-	"license" : "MIT",
-	"authors" : [{
-			"name" : "Quentin Bonaventure",
-			"email" : "quentin@bonaventure.xyz"
-		}
-	],
-	"minimum-stability" : "stable",
-	"autoload" : {
-		"psr-4" : {
-			"FTC\\Notifier\\Pushover\\" : "src/"
-		}
-	},
-	"extra" : {
-		"zf" : {
-			"config-provider" : "FTC\\Notifier\\Pushover\\ConfigProvider"
-		}
-	},
-	"scripts" : {
-		"post-install-cmd" : "php -r \"copy('config/pushover.local.php.dist', '/../../pushover.local.php');\""
-	},
-	"require" : {
-		"leonardoteixeira/pushover" : "^1.2",
-		"psr/container": "^1.0"
-	}
+    "name" : "qbonaventure/discord-website-pushover",
+    "license" : "MIT",
+    "authors" : [{
+            "name" : "Quentin Bonaventure",
+            "email" : "quentin@bonaventure.xyz"
+        }
+    ],
+    "minimum-stability" : "stable",
+    "autoload" : {
+        "psr-4" : {
+            "FTC\\Notifier\\Pushover\\" : "src/"
+        }
+    },
+    "extra" : {
+        "zf" : {
+            "config-provider" : "FTC\\Notifier\\Pushover\\ConfigProvider"
+        }
+    },
+    "scripts" : {
+        "post-install-cmd" : "FTC\\Notifier\\Pushover\\ComposerScripts::installConfigFiles",
+        "post-update-cmd" : "FTC\\Notifier\\Pushover\\ComposerScripts::installConfigFiles"
+    },
+    "require" : {
+        "leonardoteixeira/pushover" : "^1.2",
+        "psr/container": "^1.0",
+        "composer/composer": "^1.6"
+    }
 }
