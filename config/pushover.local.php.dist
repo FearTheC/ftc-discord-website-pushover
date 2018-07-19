@@ -1,7 +1,7 @@
 <?php
 return [
     'pushover' => [
-        'user_id' => '',
-        'app_token' => '',
+        'user_id' => getenv('FTC_PUSHOVER_USER_ID'),
+        'app_token' => getenv('FTC_PUSHOVER_API_TOKEN'),
     ],
 ];

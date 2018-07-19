@@ -4,9 +4,6 @@ declare(strict_types=1);
 
 namespace FTC\Notifier\Pushover;
 
-use Psr\Container\ContainerInterface;
-use LeonardoTeixeira\Pushover\Client;
-
 class ConfigProvider
 {
 
@@ -27,10 +24,7 @@ class ConfigProvider
             'invokables' => [
             ],
             'factories'  => [
-                'PushoverClient' => function(ContainerInterface $container) {
-                    $config = $container->get('config')->offsetGet('pushover');
-                    return new Client($config['user_id'], $config['app_token']);
-                },
+                'PushoverClient' => \FTC\Notifier\Pushover\ClientFactory::class,
             ],
         ];
     }
